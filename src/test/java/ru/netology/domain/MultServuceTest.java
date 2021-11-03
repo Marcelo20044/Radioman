@@ -99,6 +99,20 @@ class MultServiceTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void setCurrentVolume() {
+        Radio rad = new Radio();
+
+        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(0);
+        rad.setCurrentVolume(-1);
+        rad.setCurrentVolume(11);
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+        assertEquals(expected, actual);
+
+    }
+
 
 
 }
