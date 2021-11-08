@@ -5,25 +5,39 @@ class MultServiceTest {
 
 
     @Test
-    public void setCurrentStation() {
+    public void setCurrentStation5() {
         Radio rad = new Radio();
 
-        rad.setCurrentStation(9);
-        rad.setCurrentStation(0);
-        rad.setCurrentStation(-1);
+        rad.setCurrentStation(5);
+        int expected = 5;
+        int actual = rad.getCurrentStation();
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void setCurrentStation10() {
+        Radio rad = new Radio();
+
         rad.setCurrentStation(10);
         int expected = 0;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
+    }
+    @Test
+    public void setCurrentStation1() {
+        Radio rad = new Radio();
 
+        rad.setCurrentStation(-1);
+        int expected = 0;
+        int actual = rad.getCurrentStation();
+        assertEquals(expected, actual);
     }
 
     @Test
     public void switchStationNext(){
         Radio rad = new Radio();
 
-        rad.currentStation = 6;
-        int expected = 7;
+        rad.setCurrentStation(5);
+        int expected = 6;
         int actual = rad.switchStationNext();
         assertEquals(expected, actual);
     }
@@ -32,7 +46,7 @@ class MultServiceTest {
     public void switchStationNext2(){
         Radio rad = new Radio();
 
-        rad.currentStation = 9;
+        rad.setCurrentStation(9);
         int expected = 0;
         int actual = rad.switchStationNext();
         assertEquals(expected, actual);
@@ -43,8 +57,8 @@ class MultServiceTest {
     public void switchStationPrev(){
         Radio rad = new Radio();
 
-        rad.currentStation = 5;
-        int expected = 4;
+        rad.setCurrentStation(4);
+        int expected = 3;
         int actual = rad.switchStationPrev();
         assertEquals(expected, actual);
     }
@@ -53,7 +67,7 @@ class MultServiceTest {
     public void switchStationPrev2(){
         Radio rad = new Radio();
 
-        rad.currentStation = 0;
+        rad.setCurrentStation(0);
         int expected = 9;
         int actual = rad.switchStationPrev();
         assertEquals(expected, actual);
@@ -63,7 +77,7 @@ class MultServiceTest {
     public void increaseVolume(){
         Radio rad = new Radio();
 
-        rad.currentVolume = 5;
+        rad.setCurrentVolume(5);
         int expected = 6;
         int actual = rad.increaseVolume();
         assertEquals(expected, actual);
@@ -73,7 +87,7 @@ class MultServiceTest {
     public void increaseVolume2(){
         Radio rad = new Radio();
 
-        rad.currentVolume = 10;
+        rad.setCurrentVolume(10);
         int expected = 10;
         int actual = rad.increaseVolume();
         assertEquals(expected, actual);
@@ -83,7 +97,7 @@ class MultServiceTest {
     public void lowerVolume(){
         Radio rad = new Radio();
 
-        rad.currentVolume = 5;
+        rad.setCurrentVolume(5);
         int expected = 4;
         int actual = rad.lowerVolume();
         assertEquals(expected, actual);
@@ -93,24 +107,38 @@ class MultServiceTest {
     public void lowerVolume2(){
         Radio rad = new Radio();
 
-        rad.currentVolume = 0;
+        rad.setCurrentStation(0);
         int expected = 0;
         int actual = rad.lowerVolume();
         assertEquals(expected, actual);
     }
 
     @Test
-    public void setCurrentVolume() {
+    public void setCurrentVolume5() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(10);
-        rad.setCurrentVolume(0);
-        rad.setCurrentVolume(-1);
+        rad.setCurrentVolume(5);
+        int expected = 5;
+        int actual = rad.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void setCurrentVolume11() {
+        Radio rad = new Radio();
+
         rad.setCurrentVolume(11);
         int expected = 0;
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
+    }
+    @Test
+    public void setCurrentVolume1() {
+        Radio rad = new Radio();
 
+        rad.setCurrentVolume(-1);
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+        assertEquals(expected, actual);
     }
 
 
