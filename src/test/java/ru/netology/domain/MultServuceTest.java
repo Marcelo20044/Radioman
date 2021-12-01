@@ -36,8 +36,8 @@ class MultServiceTest {
     public void switchStationNext(){
         Radio rad = new Radio();
 
-        rad.setCurrentStation(5);
-        int expected = 6;
+        rad.setCurrentStation(9);
+        int expected = 0;
         int actual = rad.switchStationNext();
         assertEquals(expected, actual);
     }
@@ -46,19 +46,20 @@ class MultServiceTest {
     public void switchStationNext2(){
         Radio rad = new Radio();
 
-        rad.setCurrentStation(9);
-        int expected = 0;
+        rad.setCurrentStation(8);
+        int expected = 9;
         int actual = rad.switchStationNext();
         assertEquals(expected, actual);
     }
+
 
 
     @Test
     public void switchStationPrev(){
         Radio rad = new Radio();
 
-        rad.setCurrentStation(4);
-        int expected = 3;
+        rad.setCurrentStation(0);
+        int expected = 9;
         int actual = rad.switchStationPrev();
         assertEquals(expected, actual);
     }
@@ -67,8 +68,8 @@ class MultServiceTest {
     public void switchStationPrev2(){
         Radio rad = new Radio();
 
-        rad.setCurrentStation(0);
-        int expected = 9;
+        rad.setCurrentStation(1);
+        int expected = 0;
         int actual = rad.switchStationPrev();
         assertEquals(expected, actual);
     }
